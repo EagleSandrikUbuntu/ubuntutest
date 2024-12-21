@@ -1,0 +1,5 @@
+ rm [name of file to delete] - deletes files or directories
+- cat [name of file] and [another name of file] - view,concatenate,manipulate files
+- pwd [has to be in a directorie] - tells you path name, and current directory
+- clear - clears terminal
+- echo [Text] - prints any text that follows the command.
