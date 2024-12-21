@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Image Example</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; 
+        }
+
+        #movingImage {
+            position: absolute;
+            width: 100px; 
+            height: auto;
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="startMovingImage()">Click Me to Start Moving Image</button>
+
+    
+    <img id="movingImage" src="../static/image/dancing.gif" alt="Crown Image">
+
+    <script>
+        let movingImage;
+        let moveX = 0;
+        let moveY = 0;
+        let directionX = 1;
+        let directionY = 1;
+        let moveSpeed = 1;
+
+        function startMovingImage() {
+            movingImage = document.getElementById("movingImage");
+            movingImage.style.display = "block"; 
+
+            
+            moveX = window.innerWidth / 2;
+            moveY = window.innerHeight / 2;
+            movingImage.style.left = `${moveX}px`;
+            movingImage.style.top = `${moveY}px`;
+
+            
+            moveImage();
+        }
+
+        function moveImage() {
+           
+            moveX += directionX * moveSpeed;
+            moveY += directionY * moveSpeed;
+
+            
+            if (moveX >= window.innerWidth - movingImage.width || moveX <= 0) {
+                directionX *= -1;
+            }
+            if (moveY >= window.innerHeight - movingImage.height || moveY <= 0) {
+                directionY *= -1;
+            }
+
+        
+            movingImage.style.left = `${moveX}px`;
+            movingImage.style.top = `${moveY}px`;
+
+            
+            requestAnimationFrame(moveImage);
+        }
+    </script>
+
+</body>
+</html>
