@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник программиста</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="../static/img/logo.svg" alt="logo" width="30" height="30">
+        <ul class="main-list">
+            <li class="list__item">
+              <a href="/home">
+                <img src="../static/img/home.png" alt="login" width="40" height="40">
+              </a>
+        </ul>
+      </header>
+      <main>
+        {% block content %}
+        <form action="#" method="post" class="creat-form">
+            <div class="form__card">
+                <img class="card__img" src="../static/img/login.png" width="250" height="250" alt="login">
+                <div class="form__inputs">
+                    <label for="username">
+                        <input class="form__input" type="text" name="username" id="username" placeholder="Login" required>
+                    </label>
+                    <label for="password">
+                        <input class="form__input" type="password" name="password" id="password" placeholder="Password" required>
+                    </label>
+                </div>
+                <button class="form__button" type="submit">Login</button>
+            </div>
+        </form>
+        {% endblock %}
+      </main>
+</body>
+</html>
